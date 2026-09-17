@@ -1,0 +1,160 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   Демо-версия приложения внутри витрины.
+   Цвета и шрифты повторяют настоящий интерфейс («риштанская керамика»):
+   светлый фарфоровый фон, кобальт на действиях, шафран на ожидании.
+   ────────────────────────────────────────────────────────────────────────── */
+.app{
+  --a-ground:#f5f6f2; --a-surface:#fff; --a-surface-2:#eceee8; --a-line:#e0e2db;
+  --a-ink:#141a2e; --a-ink-2:#464d63; --a-ink-3:#767c90;
+  --a-cobalt:#1e3fa0; --a-cobalt-soft:#e3e8f6;
+  --a-turquoise:#0f7c83; --a-turquoise-soft:#dcefef;
+  --a-saffron:#b87c05; --a-saffron-soft:#faefd3;
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  background:var(--a-ground);color:var(--a-ink);
+  font:400 15px/1.45 "Golos Text",system-ui,sans-serif;text-align:left;
+}
+.app *{box-sizing:border-box}
+.app button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+
+/* Шапка экрана */
+.app-top{flex:none;padding:16px 16px 10px;background:var(--a-surface);border-bottom:1px solid var(--a-line)}
+.app-top h3{margin:0;font-family:"Unbounded",sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:var(--a-ink)}
+.app-top .where{margin-top:3px;font-size:12px;color:var(--a-ink-3)}
+.app-top .row{display:flex;align-items:center;gap:10px}
+.app-back{width:30px;height:30px;margin-left:-6px;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;color:var(--a-ink)}
+.app-back:hover{background:var(--a-surface-2)}
+.app-back svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Прокручиваемая часть */
+.app-body{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:12px 12px 16px}
+.app-body::-webkit-scrollbar{width:0}
+
+/* Ленты категорий */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px}
+.chips::-webkit-scrollbar{height:0}
+.chip{flex:none;padding:8px 14px;border-radius:999px;background:var(--a-surface);border:1px solid var(--a-line);
+  font-size:13px;font-weight:500;color:var(--a-ink-2);white-space:nowrap;transition:background .15s,color .15s}
+.chip[aria-selected="true"]{background:var(--a-ink);border-color:var(--a-ink);color:#fff}
+
+/* Карточки блюд */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:var(--a-surface);border-radius:16px;overflow:hidden;text-align:left;display:flex;flex-direction:column;
+  box-shadow:0 1px 2px rgb(20 26 46 / .05)}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.card .meta{padding:9px 10px 10px;display:flex;flex-direction:column;gap:2px;flex:1}
+.card .nm{font-size:13.5px;font-weight:600;line-height:1.25}
+.card .sub{font-size:11.5px;color:var(--a-ink-3)}
+.card .buy{margin-top:auto;padding-top:8px;display:flex;align-items:center;justify-content:space-between}
+.card .pr{font-family:"Unbounded",sans-serif;font-weight:500;font-size:14px}
+.plus{width:28px;height:28px;border-radius:50%;background:var(--a-cobalt-soft);color:var(--a-cobalt);
+  display:flex;align-items:center;justify-content:center;font-size:17px;line-height:1}
+
+/* Нижняя панель вкладок */
+.tabs{flex:none;display:flex;background:var(--a-surface);border-top:1px solid var(--a-line);padding:6px 4px 8px}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--a-ink-3);
+  padding:4px 0;border-radius:10px;position:relative}
+.tab svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tab[aria-current="page"]{color:var(--a-cobalt);font-weight:600}
+.tab .badge{position:absolute;top:0;right:22%;min-width:16px;height:16px;padding:0 4px;border-radius:8px;
+  background:var(--a-cobalt);color:#fff;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center}
+
+/* Большая кнопка внизу экрана */
+.app-cta{flex:none;padding:10px 12px 12px;background:var(--a-surface);border-top:1px solid var(--a-line)}
+.big{width:100%;height:46px;border-radius:13px;background:var(--a-cobalt);color:#fff;font-weight:600;font-size:15px;
+  display:flex;align-items:center;justify-content:center;gap:8px;transition:background .15s}
+.big:hover{background:#17327f}
+.big[disabled]{opacity:.45;cursor:default}
+.big.ghost{background:var(--a-surface-2);color:var(--a-ink)}
+.big.ghost:hover{background:#e2e4dd}
+
+/* Карточка блюда (шторка) */
+.sheet-back{position:absolute;inset:0;background:rgb(20 26 46 / .38);opacity:0;pointer-events:none;transition:opacity .25s}
+.sheet-back.on{opacity:1;pointer-events:auto}
+.sheet{position:absolute;left:0;right:0;bottom:0;max-height:88%;display:flex;flex-direction:column;
+  background:var(--a-surface);border-radius:22px 22px 0 0;transform:translateY(102%);transition:transform .32s cubic-bezier(.32,.72,0,1)}
+.sheet.on{transform:translateY(0)}
+.sheet img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:22px 22px 0 0}
+.sheet .inner{padding:14px 16px 0;overflow-y:auto}
+.sheet h4{margin:0;font-family:"Unbounded",sans-serif;font-weight:700;font-size:20px}
+.sheet .sub{margin-top:3px;font-size:12.5px;color:var(--a-ink-3)}
+.sheet .group{margin-top:16px}
+.sheet .group b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--a-ink-3);font-weight:600}
+.opt{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--a-line);font-size:14px}
+.opt:last-child{border-bottom:0}
+.opt .mark{width:19px;height:19px;flex:none;border-radius:50%;border:2px solid var(--a-line);position:relative;transition:border-color .15s}
+.opt.square .mark{border-radius:6px}
+.opt[aria-checked="true"] .mark{border-color:var(--a-cobalt);background:var(--a-cobalt)}
+.opt[aria-checked="true"] .mark::after{content:"";position:absolute;inset:3px;border-radius:inherit;background:#fff}
+.opt.square[aria-checked="true"] .mark::after{inset:0;background:none;border-left:2px solid #fff;border-bottom:2px solid #fff;
+  width:10px;height:6px;transform:rotate(-45deg) translate(3px,-3px)}
+.opt .price{margin-left:auto;color:var(--a-ink-3);font-size:13px}
+.count{display:flex;align-items:center;gap:6px;background:var(--a-surface-2);border-radius:999px;padding:3px}
+.count button{width:28px;height:28px;border-radius:50%;font-size:17px;display:flex;align-items:center;justify-content:center}
+.count span{min-width:20px;text-align:center;font-weight:600}
+.row-between{display:flex;align-items:center;justify-content:space-between}
+
+/* Корзина и заказ */
+.line{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--a-line)}
+.line:last-child{border-bottom:0}
+.line img{width:52px;height:52px;border-radius:10px;object-fit:cover;flex:none}
+.line .nm{font-size:14px;font-weight:600}
+.line .sub{font-size:12px;color:var(--a-ink-3);margin-top:1px}
+.line .pr{margin-left:auto;font-weight:600;white-space:nowrap}
+.block{background:var(--a-surface);border-radius:16px;padding:12px 14px;margin-bottom:10px}
+.field{margin-bottom:10px}
+.field label{display:block;font-size:12.5px;font-weight:600;color:var(--a-ink-2);margin-bottom:5px}
+.field input,.field textarea{width:100%;padding:11px 12px;border-radius:12px;border:1px solid var(--a-line);
+  background:var(--a-surface);font:inherit;color:var(--a-ink);resize:none}
+.field input:focus,.field textarea:focus{outline:2px solid var(--a-cobalt);outline-offset:-1px;border-color:transparent}
+.total{display:flex;align-items:baseline;justify-content:space-between;padding-top:10px;margin-top:4px;border-top:1px solid var(--a-line)}
+.total b{font-family:"Unbounded",sans-serif;font-weight:500;font-size:20px}
+
+/* Метка статуса */
+.badge-status{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.badge-status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st-PENDING{background:var(--a-saffron-soft);color:var(--a-saffron)}
+.st-ACCEPTED{background:var(--a-cobalt-soft);color:var(--a-cobalt)}
+.st-PREPARING{background:var(--a-saffron-soft);color:var(--a-saffron)}
+.st-READY{background:var(--a-turquoise-soft);color:var(--a-turquoise)}
+.st-COMPLETED{background:var(--a-surface-2);color:var(--a-ink-2)}
+
+/* Путь заказа */
+.track-list{display:grid;gap:0;margin-top:6px}
+.track-row{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:center;padding:7px 0}
+.track-row .pip{width:15px;height:15px;border-radius:50%;border:2px solid var(--a-line);justify-self:center;position:relative}
+.track-row.done .pip{border-color:var(--a-cobalt);background:var(--a-cobalt)}
+.track-row.now .pip{border-color:var(--a-cobalt);box-shadow:0 0 0 4px var(--a-cobalt-soft)}
+.track-row.done .pip::after{content:"";position:absolute;inset:0;border-left:2px solid #fff;border-bottom:2px solid #fff;
+  width:7px;height:4px;margin:4px 0 0 3px;transform:rotate(-45deg)}
+.track-row span{font-size:14px;color:var(--a-ink-3)}
+.track-row.done span,.track-row.now span{color:var(--a-ink);font-weight:600}
+.hint{display:flex;align-items:center;gap:7px;margin-top:10px;font-size:12px;color:var(--a-turquoise)}
+.hint::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;animation:beat 1.8s ease-in-out infinite}
+@keyframes beat{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* Панель владельца */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.kpi{background:var(--a-surface);border-radius:14px;padding:10px}
+.kpi span{font-size:11px;color:var(--a-ink-3)}
+.kpi b{display:block;font-family:"Unbounded",sans-serif;font-weight:500;font-size:18px;margin-top:2px}
+.order-card{background:var(--a-surface);border-radius:16px;padding:12px 14px;margin-bottom:10px;border:1px solid transparent}
+.order-card.fresh{border-color:var(--a-saffron);box-shadow:0 0 0 3px var(--a-saffron-soft)}
+.order-card .head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.order-card .num{font-family:"Unbounded",sans-serif;font-weight:500;font-size:16px}
+.order-card .time{font-size:12px;color:var(--a-ink-3)}
+.order-card .who{font-size:13px;color:var(--a-ink-2);margin-bottom:6px}
+.order-card .items{font-size:13px;color:var(--a-ink-2);display:grid;gap:2px;margin-bottom:8px}
+.order-card .foot{display:flex;align-items:center;gap:8px;padding-top:9px;border-top:1px solid var(--a-line)}
+.order-card .foot .pr{font-family:"Unbounded",sans-serif;font-weight:500;margin-right:auto}
+.act{height:36px;padding:0 16px;border-radius:11px;background:var(--a-cobalt);color:#fff;font-weight:600;font-size:13.5px;
+  display:inline-flex;align-items:center}
+.act:hover{background:#17327f}
+.act.quiet{background:var(--a-surface-2);color:var(--a-ink-2)}
+.empty{padding:36px 16px;text-align:center;color:var(--a-ink-3);font-size:13.5px}
+
+/* Всплывающее сообщение — как в приложении */
+.toast{position:absolute;left:12px;right:12px;top:12px;padding:11px 14px;border-radius:13px;background:var(--a-ink);
+  color:#fff;font-size:13.5px;font-weight:500;opacity:0;transform:translateY(-8px);transition:opacity .25s,transform .25s;
+  pointer-events:none;z-index:5;box-shadow:0 10px 30px -12px rgb(20 26 46 / .6)}
+.toast.on{opacity:1;transform:translateY(0)}

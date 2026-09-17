@@ -1,0 +1,521 @@
+{
+  "cafe": {
+    "name": "Манты №1",
+    "location": "Калининград, ул. Пехотная, 2А"
+  },
+  "categories": [
+    {
+      "slug": "hot",
+      "name": "Горячие блюда",
+      "products": [
+        {
+          "slug": "lagman-soup",
+          "name": "Лагман жидкий",
+          "composition": null,
+          "image": "media/menu/lagman-soup.9b6a96e0-480.webp",
+          "variants": [
+            {
+              "id": "9308a66a-009a-42b0-a6d4-b690742e32cf",
+              "name": null,
+              "price": 350,
+              "weightGrams": 300,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "lagman-fried",
+          "name": "Лагман жареный",
+          "composition": null,
+          "image": "media/menu/lagman-fried.9db315a9-480.webp",
+          "variants": [
+            {
+              "id": "92f7869c-4d9a-47eb-ad52-bb251827b678",
+              "name": null,
+              "price": 400,
+              "weightGrams": 300,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "manty",
+          "name": "Манты",
+          "composition": null,
+          "image": "media/menu/manty.1d2b4648-480.webp",
+          "variants": [
+            {
+              "id": "daba9df9-e962-45dc-95af-55f8f7ab9ac7",
+              "name": null,
+              "price": 500,
+              "weightGrams": 320,
+              "volumeMl": null,
+              "pieces": 5
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "cutlet",
+          "name": "Котлета",
+          "composition": null,
+          "image": "media/menu/cutlet.47b34116-480.webp",
+          "variants": [
+            {
+              "id": "d2de74fc-bf43-4ec1-b062-85e6dd691c8c",
+              "name": "Куриная",
+              "price": 135,
+              "weightGrams": 100,
+              "volumeMl": null,
+              "pieces": 1
+            },
+            {
+              "id": "4bda121f-ef88-4673-a33b-0a1c2713b259",
+              "name": "Рыбная",
+              "price": 145,
+              "weightGrams": 100,
+              "volumeMl": null,
+              "pieces": 1
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "plov",
+          "name": "Плов",
+          "composition": null,
+          "image": "media/menu/plov.d270d3be-480.webp",
+          "variants": [
+            {
+              "id": "805ad143-977e-4e26-b4d1-8bda94a8e882",
+              "name": null,
+              "price": 400,
+              "weightGrams": 300,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "slug": "soups",
+      "name": "Супы",
+      "products": [
+        {
+          "slug": "soup-borsch",
+          "name": "Борщ",
+          "composition": null,
+          "image": "media/menu/soup-borsch.63e85d63-480.webp",
+          "variants": [
+            {
+              "id": "859e788f-4b2a-48c7-a7f3-3badc2b76002",
+              "name": null,
+              "price": 285,
+              "weightGrams": 300,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "soup-kharcho",
+          "name": "Харчо",
+          "composition": null,
+          "image": "media/menu/soup-kharcho.e303044b-480.webp",
+          "variants": [
+            {
+              "id": "1163a5cd-782e-47e8-b9f5-5b97fc4343bb",
+              "name": null,
+              "price": 285,
+              "weightGrams": 300,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "soup-chicken",
+          "name": "Суп куриный",
+          "composition": null,
+          "image": "media/menu/soup-chicken.9367af4c-480.webp",
+          "variants": [
+            {
+              "id": "04926843-98d8-4a07-918d-23d7b09b0fdc",
+              "name": null,
+              "price": 285,
+              "weightGrams": 300,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "soup-ashlyan-fu",
+          "name": "Ашлян-Фу",
+          "composition": null,
+          "image": "media/menu/soup-ashlyan-fu.e8d4a6a4-480.webp",
+          "variants": [
+            {
+              "id": "55d94d05-4f90-4091-99e7-52fc5fe7f33d",
+              "name": null,
+              "price": 350,
+              "weightGrams": 300,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "slug": "salads",
+      "name": "Салаты",
+      "products": [
+        {
+          "slug": "salad-fresh",
+          "name": "Свежий",
+          "composition": null,
+          "image": "media/menu/salad-fresh.03d3a455-480.webp",
+          "variants": [
+            {
+              "id": "de14721c-a32c-40d4-86fd-db5b1f757d9c",
+              "name": null,
+              "price": 180,
+              "weightGrams": 150,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "salad-vitamin",
+          "name": "Витаминный",
+          "composition": null,
+          "image": "media/menu/salad-vitamin.3b20b66b-480.webp",
+          "variants": [
+            {
+              "id": "c474d4b4-1ed7-401e-af57-78decc710e59",
+              "name": null,
+              "price": 180,
+              "weightGrams": 150,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        },
+        {
+          "slug": "salad-funchoza",
+          "name": "Фунчоза",
+          "composition": null,
+          "image": "media/menu/salad-funchoza.4594efa4-480.webp",
+          "variants": [
+            {
+              "id": "8ce947a2-6e21-4c46-9ed1-d10dcd9a4d48",
+              "name": null,
+              "price": 200,
+              "weightGrams": 150,
+              "volumeMl": null,
+              "pieces": null
+            }
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "slug": "coffee",
+      "name": "Кофе и какао",
+      "products": [
+        {
+          "slug": "espresso",
+          "name": "Эспрессо",
+          "composition": null,
+          "image": "media/menu/espresso.042eecc2-480.webp",
+          "variants": [
+            {
+              "id": "4dc7672c-f4bd-402a-ba02-e8153e17a973",
+              "name": null,
+              "price": 95,
+              "weightGrams": null,
+              "volumeMl": 35,
+              "pieces": null
+            }
+          ],
+          "options": [
+            {
+              "name": "Добавки",
+              "type": "MULTIPLE",
+              "values": [
+                {
+                  "id": "c9ced7de-fe6d-4937-901a-52f71081bb26",
+                  "name": "Доп. эспрессо",
+                  "price": 65
+                },
+                {
+                  "id": "d02c5298-4eb3-427e-a11e-b567d3126c9b",
+                  "name": "Молоко",
+                  "price": 15
+                },
+                {
+                  "id": "3f08304f-c2ed-4f1a-844e-e42550307055",
+                  "name": "Сливки",
+                  "price": 35
+                },
+                {
+                  "id": "e9604c66-dab3-427d-8a93-d463b51f51fb",
+                  "name": "Растительное молоко",
+                  "price": 95
+                },
+                {
+                  "id": "11bf855f-5b11-4936-b603-5d9d458ebff3",
+                  "name": "Сироп",
+                  "price": 35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "doppio",
+          "name": "Доппио",
+          "composition": null,
+          "image": "media/menu/doppio.1bd7a117-480.webp",
+          "variants": [
+            {
+              "id": "a097ecd6-1816-4784-aef9-be3d60861e32",
+              "name": null,
+              "price": 135,
+              "weightGrams": null,
+              "volumeMl": 70,
+              "pieces": null
+            }
+          ],
+          "options": [
+            {
+              "name": "Добавки",
+              "type": "MULTIPLE",
+              "values": [
+                {
+                  "id": "4ab3ee68-62df-4eb3-8149-ebef55c28d40",
+                  "name": "Доп. эспрессо",
+                  "price": 65
+                },
+                {
+                  "id": "cb1b4504-ce26-477c-aa95-7a29a7574edd",
+                  "name": "Молоко",
+                  "price": 15
+                },
+                {
+                  "id": "34e56f78-792a-4e5b-8c05-d2d9adbaaad2",
+                  "name": "Сливки",
+                  "price": 35
+                },
+                {
+                  "id": "fe944b2a-afb9-490c-a6fc-541c245af64a",
+                  "name": "Растительное молоко",
+                  "price": 95
+                },
+                {
+                  "id": "8b348027-7ef3-4410-a768-988ac71399eb",
+                  "name": "Сироп",
+                  "price": 35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "americano",
+          "name": "Американо",
+          "composition": null,
+          "image": "media/menu/americano.cd7a6d1f-480.webp",
+          "variants": [
+            {
+              "id": "314938b5-4ed7-49f5-88ea-07a8e3113f1c",
+              "name": null,
+              "price": 145,
+              "weightGrams": null,
+              "volumeMl": 200,
+              "pieces": null
+            },
+            {
+              "id": "9aca2c96-920d-4316-bb12-c707c391cc96",
+              "name": null,
+              "price": 165,
+              "weightGrams": null,
+              "volumeMl": 300,
+              "pieces": null
+            }
+          ],
+          "options": [
+            {
+              "name": "Добавки",
+              "type": "MULTIPLE",
+              "values": [
+                {
+                  "id": "397d8e72-966e-439c-91b6-d2927a3ecac3",
+                  "name": "Доп. эспрессо",
+                  "price": 65
+                },
+                {
+                  "id": "a6fcc9ec-05cb-4ae0-90ed-0715862af538",
+                  "name": "Молоко",
+                  "price": 15
+                },
+                {
+                  "id": "9da36edb-1043-405c-93e3-eacabb610370",
+                  "name": "Сливки",
+                  "price": 35
+                },
+                {
+                  "id": "111816d4-6bbe-490f-bd51-eb41a971b72d",
+                  "name": "Растительное молоко",
+                  "price": 95
+                },
+                {
+                  "id": "04645d24-1dc5-412c-b583-04fe1bf977da",
+                  "name": "Сироп",
+                  "price": 35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "cappuccino",
+          "name": "Капучино",
+          "composition": null,
+          "image": "media/menu/cappuccino.00f9f419-480.webp",
+          "variants": [
+            {
+              "id": "1c2eff6d-385a-479b-8885-cbad93020050",
+              "name": null,
+              "price": 175,
+              "weightGrams": null,
+              "volumeMl": 200,
+              "pieces": null
+            },
+            {
+              "id": "0402d439-8591-4939-97c7-039c8f5d4b13",
+              "name": null,
+              "price": 195,
+              "weightGrams": null,
+              "volumeMl": 300,
+              "pieces": null
+            },
+            {
+              "id": "eb681b8d-0234-415b-8cf2-c992b3eeedb4",
+              "name": null,
+              "price": 215,
+              "weightGrams": null,
+              "volumeMl": 400,
+              "pieces": null
+            }
+          ],
+          "options": [
+            {
+              "name": "Добавки",
+              "type": "MULTIPLE",
+              "values": [
+                {
+                  "id": "75855c2b-acb0-4b9a-b787-c7c2da02a808",
+                  "name": "Доп. эспрессо",
+                  "price": 65
+                },
+                {
+                  "id": "bc94aa7c-b46c-42e0-a571-96bf002900ca",
+                  "name": "Молоко",
+                  "price": 15
+                },
+                {
+                  "id": "d4df16b6-4744-47f2-9b90-7b9a9f8666e2",
+                  "name": "Сливки",
+                  "price": 35
+                },
+                {
+                  "id": "0f4028d7-04a9-4fbd-9c61-fca5e684f145",
+                  "name": "Растительное молоко",
+                  "price": 95
+                },
+                {
+                  "id": "e31102b7-18b4-449a-9916-9f57fed54b5d",
+                  "name": "Сироп",
+                  "price": 35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "latte",
+          "name": "Латте",
+          "composition": null,
+          "image": "media/menu/latte.5b04578b-480.webp",
+          "variants": [
+            {
+              "id": "7c2a04d5-c8ac-4c7d-a09a-02a59e76c8e4",
+              "name": null,
+              "price": 185,
+              "weightGrams": null,
+              "volumeMl": 300,
+              "pieces": null
+            },
+            {
+              "id": "6a5b7699-29f4-4e30-a7a1-ef6f62fc0fcf",
+              "name": null,
+              "price": 215,
+              "weightGrams": null,
+              "volumeMl": 400,
+              "pieces": null
+            }
+          ],
+          "options": [
+            {
+              "name": "Добавки",
+              "type": "MULTIPLE",
+              "values": [
+                {
+                  "id": "c675d3a5-07d3-4a56-ad5b-1df5b03ef8e5",
+                  "name": "Доп. эспрессо",
+                  "price": 65
+                },
+                {
+                  "id": "4c7f5b94-1be6-4a4a-8109-9766e947106b",
+                  "name": "Молоко",
+                  "price": 15
+                },
+                {
+                  "id": "5b1500f6-90a0-464a-a427-3b9a9c8f3458",
+                  "name": "Сливки",
+                  "price": 35
+                },
+                {
+                  "id": "65fec2ef-13d8-4b80-9081-d60b7fb54a07",
+                  "name": "Растительное молоко",
+                  "price": 95
+                },
+                {
+                  "id": "6f89dcfe-1a05-40b3-956c-9254d026d62f",
+                  "name": "Сироп",
+                  "price": 35
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
